@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SILALIN - Sistem Informasi Lalu Lintas Dishub Kota Cirebon</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-blue: #3b82f6;
+            --accent-gold: #fbbf24;
+            --dark-blue: #1e40af;
+            --light-blue: rgba(59, 130, 246, 0.1);
+            --gray-bg: #f8fafc;
+            --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            --gradient-gold: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+        }
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Enhanced Navbar */
+        .navbar {
+            background: rgba(255, 255, 255, 0.1) !important;
+            backdrop-filter: blur(20px);
+            box-shadow: none;
+            padding: 1rem 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(30, 58, 138, 0.1);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Teks brand: small + large */
+        .brand-text .small-text,
+        .brand-text .large-text {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block; /* pastikan baris terpisah */
+        }
+
+        .brand-text .small-text {
+            font-size: 0.8rem;
+            font-weight: 400;
+        }
+
+        .brand-text .large-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        /* Navbar scrolled effect */
+        .navbar.scrolled .brand-text .small-text,
+        .navbar.scrolled .brand-text .large-text {
+            background: var(--primary-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: 500;
+            padding: 0.75rem 1.2rem !important;
+            transition: all 0.3s ease;
+            position: relative;
+            border-radius: 25px;
+            margin: 0 5px;
+        }
+
+        .navbar.scrolled .nav-link {
+            color: var(--primary-blue) !important;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .navbar.scrolled .nav-link:hover {
+            background: rgba(30, 58, 138, 0.1);
+        }
+
+        .navbar-nav .nav-link.active {
+            background: rgba(251, 191, 36, 0.2);
+            color: var(--accent-gold) !important;
+        }
+
+        /* Enhanced Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(30, 64, 175, 0.8) 50%, rgba(59, 130, 246, 0.7) 100%),
+                url('assets/img/banner/setda-balkot.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            color: white;
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff 0%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(251, 191, 36, 0.1);
+            border-radius: 25px;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            max-width: 600px;
+        }
+
+        .search-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .search-box .form-control {
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            transition: all 0.3s ease;
+        }
+
+        .search-box .form-control:focus {
+            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .search-box .btn {
+            border-radius: 15px;
+            padding: 15px 30px;
+            font-weight: 600;
+            background: var(--gradient-gold);
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-box .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(251, 191, 36, 0.3);
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 10%;
+            animation-delay: -2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: -4s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(180deg);
+            }
+        }
+
+        /* Enhanced Sections */
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 5px;
+            background: var(--gradient-gold);
+            border-radius: 3px;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 2rem auto 0;
+            line-height: 1.6;
+        }
+
+        /* Enhanced About Section */
+        .about-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            opacity: 0.05;
+        }
+
+        .about-card {
+            background: white;
+            border-radius: 25px;
+            padding: 3rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(30, 58, 138, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.12);
+        }
+
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+
+        .about-card h3 {
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .mascot-image {
+            position: relative;
+            text-align: center;
+        }
+
+        .mascot-placeholder {
+            width: 350px;
+            height: 400px;
+            background: var(--gradient-primary);
+            border-radius: 25px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 25px 50px rgba(30, 58, 138, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .mascot-placeholder:hover {
+            transform: rotateY(10deg) rotateX(5deg);
+            box-shadow: 0 35px 70px rgba(30, 58, 138, 0.4);
+        }
+
+        .mascot-placeholder::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(100%) rotate(45deg);
+            }
+        }
+
+        .mascot-placeholder i {
+            font-size: 5rem;
+            color: white;
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Enhanced Services Section */
+        .services-section {
+            background: white;
+            position: relative;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid #f1f5f9;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border-color: var(--accent-gold);
+        }
+
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-primary);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--gradient-gold);
+            transform: rotateY(180deg) scale(1.1);
+        }
+
+        .service-icon i {
+            font-size: 2.5rem;
+            color: white;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .service-icon i {
+            transform: rotateY(-180deg);
+        }
+
+        .service-card h5 {
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .service-card p {
+            color: #6b7280;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Enhanced Programs Section */
+        .programs-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            border: 1px solid rgba(30, 58, 138, 0.1);
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .program-icon {
+            width: 100%;
+            height: 100px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .program-card:hover .program-icon {
+            height: 120px;
+        }
+
+        .program-icon i {
+            font-size: 3rem;
+            color: white;
+            transition: all 0.4s ease;
+        }
+
+        .program-card:hover .program-icon i {
+            transform: scale(1.2);
+        }
+
+        .program-card .card-body {
+            padding: 2rem;
+            position: relative;
+        }
+
+        .program-card h6 {
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .program-card p {
+            color: #6b7280;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Enhanced News Section */
+        .news-section {
+            background: white;
+            position: relative;
+        }
+
+        .news-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 4rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: #f1f5f9;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            color: var(--primary-blue);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: left 0.3s ease;
+            z-index: 1;
+        }
+
+        .tab-btn span {
+            position: relative;
+            z-index: 2;
+        }
+
+        .tab-btn.active::before,
+        .tab-btn:hover::before {
+            left: 0;
+        }
+
+        .tab-btn.active,
+        .tab-btn:hover {
+            color: white;
+            box-shadow: 0 10px 20px rgba(30, 58, 138, 0.3);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(30, 58, 138, 0.1);
+            position: relative;
+        }
+
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border-color: var(--accent-gold);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 220px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .news-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s ease;
+        }
+
+        .news-card:hover .news-image::before {
+            opacity: 0.7;
+        }
+
+        .news-image i {
+            font-size: 3.5rem;
+            color: white;
+            z-index: 2;
+        }
+
+        .news-card .card-body {
+            padding: 2rem;
+        }
+
+        .news-date {
+            color: var(--accent-gold);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .news-title {
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+
+        .news-card:hover .news-title {
+            color: var(--secondary-blue);
+        }
+
+        .news-excerpt {
+            color: #6b7280;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .read-more:hover {
+            color: var(--accent-gold);
+            gap: 12px;
+        }
+
+        /* Enhanced Footer */
+        footer {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 5rem 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%23FFFFFF"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%23FFFFFF"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23FFFFFF"></path></svg>');
+            background-size: cover;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-logo img {
+            height: 70px;
+            margin-bottom: 1.5rem;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-logo h5 {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .footer-links a::before {
+            content: '➤';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+            padding-left: 30px;
+            transform: translateX(5px);
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border-radius: 50%;
+            margin-right: 12px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-icons a:hover {
+            background: var(--accent-gold);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(251, 191, 36, 0.3);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            margin-top: 4rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-gold);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(251, 191, 36, 0.3);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.4);
+        }
+
+        /* Loading Animation */
+        .loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: var(--gradient-gold);
+            z-index: 9999;
+            transition: width 0.3s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+
+            .about-card {
+                padding: 2.5rem;
+            }
+
+            .mascot-placeholder {
+                width: 300px;
+                height: 350px;
+                margin-top: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            .section-padding {
+                padding: 4rem 0;
+            }
+
+            .about-card {
+                padding: 2rem;
+            }
+
+            .mascot-placeholder {
+                width: 250px;
+                height: 300px;
+            }
+
+            .news-grid,
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .search-box {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-padding {
+                padding: 3rem 0;
+            }
+
+            .search-box .btn {
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            .navbar-brand span {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Bar -->
+    <div class="loading-bar"></div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="bi bi-chevron-up"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logo/logo-pemkot.png" alt="Logo SIPERHUB" class="logo">
+                <div class="brand-text">
+                    <span class="small-text">Pemerintah Kota Cirebon</span>
+                    <span class="large-text">Dinas Perhubungan</span>
+                </div>
+            </a>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#beranda">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#profil">Profil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Layanan
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Rekomendasi Andalalin</a></li>
+                            <li><a class="dropdown-item" href="#">Rekomendasi Parkir</a></li>
+                            <li><a class="dropdown-item" href="#">Pengaduan Masyarakat</a></li>
+                            <li><a class="dropdown-item" href="#">Data Transportasi</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ppid">PPID</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#informasi">Informasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontak">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="beranda">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="hero-content">
+                        <h1>Dinas Perhubungan Kota Cirebon</h1>
+                        <p class="tagline">"Disiplin, Kreatif, Inovatif, Sinergis"</p>
+                        <p>Portal layanan publik untuk akses informasi dan layanan transportasi Kota Cirebon secara
+                            digital dengan teknologi terkini dan pelayanan terbaik.</p>
+
+                        <div class="search-box" data-aos="fade-up" data-aos-delay="300">
+                            <div class="input-group">
+                                <input type="text" class="form-control"
+                                    placeholder="Cari layanan, informasi atau berita...">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="bi bi-search me-2"></i>Cari
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section section-padding" id="profil">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <div class="about-card">
+                        <div class="section-title text-start mb-4">
+                            <h3>SIPERHUB KOTA CIREBON</h3>
+                        </div>
+                        <p class="mb-4">Dinas Perhubungan, Informatika dan Statistik yang lebih dikenal dengan DKIS,
+                            merupakan bagian dari Pemerintah Kota Cirebon yang bertugas melaksanakan urusan pemerintahan
+                            yang menjadi kewenangan daerah dan tugas pembantuan yang ditugaskan kepada Daerah.</p>
+                        <p>Dibentuk berdasarkan Peraturan Daerah Kota Cirebon Nomor 7 Tahun 2016 tentang Pembentukan dan
+                            Susunan Perangkat Daerah Kota Cirebon, serta Peraturan Walikota Cirebon Nomor 56 Tahun 2016
+                            tentang Kedudukan, Susunan Organisasi, Tugas dan Fungsi, serta Tata Kerja Dinas Perhubungan
+                            Kota Cirebon.</p>
+                        <div class="mt-4">
+                            <a href="#" class="btn btn-primary me-3">
+                                <i class="bi bi-info-circle me-2"></i>Selengkapnya
+                            </a>
+                            <a href="#" class="btn btn-outline-primary">
+                                <i class="bi bi-download me-2"></i>Download Profil
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5" data-aos="fade-left" data-aos-delay="200">
+                    <div class="mascot-image">
+                        <div class="mascot-placeholder">
+                            <i class="bi bi-building"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section section-padding">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Layanan Unggulan</h2>
+                <p>Akses mudah dan cepat ke berbagai layanan transportasi Kota Cirebon dengan teknologi modern</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-chat-square-dots"></i>
+                        </div>
+                        <h5>Pengaduan Masyarakat</h5>
+                        <p>Sampaikan keluhan dan saran terkait transportasi untuk perbaikan pelayanan dengan sistem yang
+                            responsif</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h5>Data Transportasi</h5>
+                        <p>Akses data dan statistik transportasi Kota Cirebon secara real-time dengan analisis mendalam
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-car-front"></i>
+                        </div>
+                        <h5>Rekomendasi Parkir</h5>
+                        <p>Informasi lengkap tentang lokasi parkir, ketersediaan, dan tarif di seluruh Kota Cirebon</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-signpost-split"></i>
+                        </div>
+                        <h5>Rekomendasi Andalalin</h5>
+                        <p>Konsultasi dan rekomendasi analisis dampak lalu lintas untuk pengembangan kawasan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Programs Section -->
+    <section class="programs-section section-padding">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Program Unggulan</h2>
+                <p>Program-program inovatif untuk meningkatkan kualitas transportasi dan pelayanan publik Kota Cirebon
+                </p>
+            </div>
+
+            <div class="program-grid">
+                <div class="program-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="program-icon">
+                        <i class="bi bi-shield-exclamation"></i>
+                    </div>
+                    <div class="card-body">
+                        <h6>Cirebon Siaga 112</h6>
+                        <p>Sistem Tanggap Darurat Terpadu dengan respon cepat 24/7</p>
+                    </div>
+                </div>
+
+                <div class="program-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="program-icon">
+                        <i class="bi bi-database"></i>
+                    </div>
+                    <div class="card-body">
+                        <h6>Cirebon Satu Data</h6>
+                        <p>Portal Satu Data Kota Cirebon terintegrasi</p>
+                    </div>
+                </div>
+
+                <div class="program-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="program-icon">
+                        <i class="bi bi-wifi"></i>
+                    </div>
+                    <div class="card-body">
+                        <h6>Cirebon Milenial Internet</h6>
+                        <p>Akses Internet Gratis di Area Publik dengan kecepatan tinggi</p>
+                    </div>
+                </div>
+
+                <div class="program-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="program-icon">
+                        <i class="bi bi-phone"></i>
+                    </div>
+                    <div class="card-body">
+                        <h6>CSIRT</h6>
+                        <p>Computer Security Incident Response Team</p>
+                    </div>
+                </div>
+
+                <div class="program-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="program-icon">
+                        <i class="bi bi-code-square"></i>
+                    </div>
+                    <div class="card-body">
+                        <h6>SEDUKLUB Cirebon</h6>
+                        <p>Sistem Edukasi Klub berbasis digital</p>
+                    </div>
+                </div>
+
+                <div class="program-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="program-icon">
+                        <i class="bi bi-house"></i>
+                    </div>
+                    <div class="card-body">
+                        <h6>SAMPERAN Cirebon</h6>
+                        <p>Sistem Administrasi Pemerintahan modern</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section section-padding">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Kabar Terkini</h2>
+                <p>Berita terbaru dan pengumuman penting dari Dinas Perhubungan Kota Cirebon</p>
+            </div>
+
+            <div class="news-tabs" data-aos="fade-up" data-aos-delay="100">
+                <button class="tab-btn active" data-tab="berita"><span>Berita</span></button>
+                <button class="tab-btn" data-tab="artikel"><span>Artikel</span></button>
+                <button class="tab-btn" data-tab="pengumuman"><span>Pengumuman</span></button>
+            </div>
+
+            <div class="tab-content" id="berita">
+                <div class="news-grid">
+                    <div class="news-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="news-image">
+                            <i class="bi bi-newspaper"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="news-date">22 September 2025</div>
+                            <h5 class="news-title">Perbaikan Jalan Protokol Memasuki Tahap Akhir</h5>
+                            <p class="news-excerpt">Dishub Kota Cirebon mengumumkan progress perbaikan infrastruktur
+                                jalan protokol yang mencapai 85% dan diperkirakan selesai akhir tahun.</p>
+                            <a href="#" class="read-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="news-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="news-image">
+                            <i class="bi bi-phone"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="news-date">20 September 2025</div>
+                            <h5 class="news-title">Launching Aplikasi Smart Transport Cirebon</h5>
+                            <p class="news-excerpt">Inovasi terbaru untuk memudahkan masyarakat mengakses informasi
+                                transportasi publik secara real-time dengan fitur lengkap.</p>
+                            <a href="#" class="read-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="news-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="news-image">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="news-date">18 September 2025</div>
+                            <h5 class="news-title">Sosialisasi Keselamatan Berkendara di Sekolah</h5>
+                            <p class="news-excerpt">Program edukasi keselamatan berlalu lintas untuk siswa SMA se-Kota
+                                Cirebon dilaksanakan hingga akhir tahun.</p>
+                            <a href="#" class="read-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="500">
+                    <a href="#" class="btn btn-outline-primary btn-lg">
+                        <i class="bi bi-arrow-right me-2"></i>Lihat Semua Berita
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publikasi Section -->
+    <section class="programs-section section-padding">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Pojok Kota Cirebon</h2>
+                <p>Publikasi dan informasi resmi dari Pemerintah Kota Cirebon</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="program-card">
+                        <div class="program-icon" style="background: linear-gradient(135deg, #dc2626, #ef4444);">
+                            <i class="bi bi-file-text"></i>
+                        </div>
+                        <div class="card-body">
+                            <h6>FAKTA vs MITOS</h6>
+                            <p>Edukasi Publik tentang Informasi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="program-card">
+                        <div class="program-icon" style="background: linear-gradient(135deg, #059669, #10b981);">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                        <div class="card-body">
+                            <h6>INOVASI GOVERNMENT</h6>
+                            <p>Portal Inovasi Pemerintahan Terpadu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="program-card">
+                        <div class="program-icon" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">
+                            <i class="bi bi-info-circle"></i>
+                        </div>
+                        <div class="card-body">
+                            <h6>CARA MENGATASI</h6>
+                            <p>Panduan Mengatasi Masalah Transportasi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="program-card">
+                        <div class="program-icon" style="background: linear-gradient(135deg, #ea580c, #f97316);">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+                        <div class="card-body">
+                            <h6>HIDUP SEHAT</h6>
+                            <p>Tips Hidup Sehat untuk Masyarakat</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak">
+        <div class="container footer-content">
+            <div class="row">
+                <div class="col-lg-4 mb-4" data-aos="fade-up">
+                    <div class="footer-logo">
+                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23ffffff'/><path d='M25 50h50M35 35h30M35 65h30' stroke='%231e3a8a' stroke-width='3' stroke-linecap='round'/></svg>"
+                            alt="Logo SIPERHUB">
+                        <h5>SIPERHUB - Dinas Perhubungan Kota Cirebon</h5>
+                        <p>Portal layanan publik untuk akses informasi dan layanan transportasi Kota Cirebon secara
+                            digital dengan pelayanan yang profesional dan terpercaya.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <h5 class="mb-3">Alamat</h5>
+                    <p class="mb-3"><i class="bi bi-geo-alt me-2"></i>Jl. Brigjen Darsono No. 1, Kota Cirebon, Jawa
+                        Barat 45122</p>
+
+                    <h6 class="mb-2">Kontak</h6>
+                    <p class="mb-2"><i class="bi bi-telephone me-2"></i>(0231) 123456</p>
+                    <p class="mb-3"><i class="bi bi-envelope me-2"></i>dishub@cirebonkota.go.id</p>
+
+                    <h6 class="mb-2">Media Sosial</h6>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                        <div class="col-6">
+                            <h6 class="mb-3">Produk Posting</h6>
+                            <div class="footer-links">
+                                <a href="#">SIPERHUB Blog</a>
+                                <a href="#">Galeri Foto</a>
+                                <a href="#">Video Portal</a>
+                                <a href="#">Info Grafis</a>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <h6 class="mb-3">Pranala Posting</h6>
+                            <div class="footer-links">
+                                <a href="#">Regulasi</a>
+                                <a href="#">Transparansi</a>
+                                <a href="#">Open Data</a>
+                                <a href="#">e-PPID</a>
+                                <a href="#">Whistleblowing</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2024 SIPERHUB Kota Cirebon. Hak Cipta Dilindungi Undang-Undang.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            const backToTop = document.querySelector('.back-to-top');
+
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+
+            // Loading bar simulation
+            const winHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
+            const scrollTop = window.pageYOffset;
+            const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+            document.querySelector('.loading-bar').style.width = scrollPercent + '%';
+        });
+
+        // Smooth scrolling untuk internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Back to top functionality
+        document.querySelector('.back-to-top').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Tab functionality untuk news section
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                // Remove active class dari semua tabs
+                document.querySelectorAll('.tab-btn').forEach(tab => tab.classList.remove('active'));
+                // Add active class ke tab yang diklik
+                this.classList.add('active');
+
+                // Simulasi content switching
+                const tabName = this.getAttribute('data-tab');
+                console.log('Switching to tab:', tabName);
+
+                // Add animation to tab content
+                const tabContent = document.querySelector('.tab-content');
+                tabContent.style.opacity = '0';
+                setTimeout(() => {
+                    tabContent.style.opacity = '1';
+                }, 300);
+            });
+        });
+
+        // Search functionality
+        document.querySelector('.search-box .btn').addEventListener('click', function () {
+            const searchTerm = document.querySelector('.search-box input').value;
+            if (searchTerm.trim()) {
+                // Add search animation
+                this.innerHTML = '<i class="bi bi-search me-2"></i>Mencari...';
+                setTimeout(() => {
+                    this.innerHTML = '<i class="bi bi-search me-2"></i>Cari';
+                    alert('Mencari: ' + searchTerm);
+                }, 1000);
+            }
+        });
+
+        // Enter key untuk search
+        document.querySelector('.search-box input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                document.querySelector('.search-box .btn').click();
+            }
+        });
+
+        // Hover effects for cards
+        document.querySelectorAll('.service-card, .news-card, .program-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = this.style.transform + ' scale(1.02)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = this.style.transform.replace(' scale(1.02)', '');
+            });
+        });
+
+        // Parallax effect untuk hero section
+        window.addEventListener('scroll', function () {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero-section');
+            if (parallax) {
+                const speed = scrolled * 0.5;
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+
+        // Dynamic year update
+        const currentYear = new Date().getFullYear();
+        document.querySelector('.copyright p').innerHTML =
+            `&copy; ${currentYear} SIPERHUB Kota Cirebon. Hak Cipta Dilindungi Undang-Undang.`;
+
+        // Loading simulation
+        window.addEventListener('load', function () {
+            setTimeout(() => {
+                document.querySelector('.loading-bar').style.width = '100%';
+                setTimeout(() => {
+                    document.querySelector('.loading-bar').style.opacity = '0';
+                }, 500);
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>
