@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer - SILALIN Kota Cirebon</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-blue: #2563eb;
+            --accent-gold: #f59e0b;
+            --gradient-primary: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            --gradient-gold: linear-gradient(135deg, #f59e0b, #d97706);
+            --gradient-dark: linear-gradient(135deg, #1f2937, #374151);
+        }
+
+        footer {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 5rem 0 2rem;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%23FFFFFF"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%23FFFFFF"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23FFFFFF"></path></svg>');
+            background-size: cover;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo h5 {
+            font-weight: 700;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #fff, #fef3c7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-logo p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .footer-section h5 {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-section h5::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent-gold);
+            border-radius: 2px;
+        }
+
+        .footer-section h6 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: #fef3c7;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .footer-section p i {
+            color: var(--accent-gold);
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+            padding-left: 25px;
+            transform: translateX(5px);
+        }
+
+        .footer-links a:hover::before {
+            transform: translateX(3px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-icons a:hover {
+            background: var(--accent-gold);
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 15px rgba(251, 191, 36, 0.3);
+            color: #1e3a8a;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .footer-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Animasi untuk elemen footer */
+        .footer-section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .footer-section:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .footer-section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .footer-section:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Efek dekoratif tambahan */
+        footer::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        /* Responsive design */
+        @media (max-width: 991px) {
+            footer {
+                padding: 4rem 0 2rem;
+            }
+
+            .footer-section {
+                margin-bottom: 2.5rem;
+            }
+
+            .footer-section h5::after {
+                width: 30px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            footer {
+                padding: 3rem 0 1.5rem;
+            }
+
+            .footer-logo {
+                text-align: center;
+            }
+
+            .footer-logo .d-flex {
+                justify-content: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .footer-section h5 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <footer id="kontak">
+        <div class="container footer-content">
+            <div class="row">
+                <!-- Logo & Deskripsi -->
+                <div class="col-lg-4 col-md-6 footer-section">
+                    <div class="footer-logo">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="assets/img/logo/logo-pemkot.png" alt="Logo SILALIN"
+                                style="max-height:70px; margin-right:15px;">
+                            <div>
+                                <h5 class="mb-1">SILALIN</h5>
+                                <p class="mb-0 text-light small">Sistem Lalu Lintas Kota Cirebon</p>
+                            </div>
+                        </div>
+                        <p>Portal resmi Bidang Lalu Lintas, Dinas Perhubungan Kota Cirebon. Menyediakan informasi,
+                            layanan, dan pengaduan masyarakat di bidang lalu lintas secara cepat, mudah, dan transparan.
+                        </p>
+                        <div class="footer-badge">
+                            <i class="bi bi-award-fill me-1"></i> Layanan Terpercaya sejak 2020
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alamat & Kontak -->
+                <div class="col-lg-4 col-md-6 footer-section">
+                    <h5 class="mb-3">Kontak & Alamat</h5>
+                    <p class="mb-3"><i class="bi bi-geo-alt-fill"></i>Jl. Brigjen Darsono No. 1, Kota Cirebon, Jawa
+                        Barat 45122</p>
+
+                    <h6 class="mt-4 mb-2">Kontak Langsung</h6>
+                    <p class="mb-2"><i class="bi bi-telephone-fill"></i>(0231) 123456</p>
+                    <p class="mb-3"><i class="bi bi-envelope-fill"></i>dishub@cirebonkota.go.id</p>
+
+                    <h6 class="mt-4 mb-2">Jam Operasional</h6>
+                    <p class="mb-3"><i class="bi bi-clock-fill"></i>Senin - Jumat: 08:00 - 16:00 WIB</p>
+
+                    <h6 class="mt-4 mb-2">Ikuti Kami</h6>
+                    <div class="social-icons">
+                        <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" title="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" title="Twitter"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Tautan Cepat -->
+                <div class="col-lg-4 col-md-12 footer-section">
+                    <div class="row">
+                        <div class="col-sm-6 mb-4 mb-sm-0">
+                            <h5 class="mb-3">Layanan</h5>
+                            <div class="footer-links">
+                                <a href="#">Rekomendasi Andalalin</a>
+                                <a href="#">Rekomendasi Parkir</a>
+                                <a href="#">Pengaduan Masyarakat</a>
+                                <a href="#">Data Lalu Lintas</a>
+                                <a href="#">FAQ & Bantuan</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <h5 class="mb-3">Informasi</h5>
+                            <div class="footer-links">
+                                <a href="#">Regulasi & Kebijakan</a>
+                                <a href="#">Transparansi Anggaran</a>
+                                <a href="#">Open Data</a>
+                                <a href="#">e-PPID</a>
+                                <a href="#">Berita & Pengumuman</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-3" style="border-top: 1px solid rgba(255,255,255,0.1);">
+                        <h6 class="mb-2">Layanan Darurat</h6>
+                        <p class="mb-1 small"><i class="bi bi-telephone-fill text-warning"></i>Polda Jabar: 112</p>
+                        <p class="small"><i class="bi bi-telephone-fill text-warning"></i>Dishub Kota: (0231) 123457</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                <p class="mb-0">&copy; 2025 SILALIN – Dinas Perhubungan Kota Cirebon. Seluruh Hak Cipta Dilindungi.</p>
+                <p class="mt-1 small">Desain dan dikembangkan oleh Tim IT Dishub Kota Cirebon</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

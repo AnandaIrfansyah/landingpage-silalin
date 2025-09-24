@@ -75,7 +75,7 @@
         /* Teks brand: small + large */
         .brand-text .small-text,
         .brand-text .large-text {
-            background: var(--gradient-gold);
+            background: var(--gray-bg);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -1591,10 +1591,10 @@
         .copyright {
             border-top: 1px solid rgba(255, 255, 255, 0.2);
             padding-top: 2rem;
-            margin-top: 4rem;
+            margin-top: 3rem;
             text-align: center;
             color: rgba(255, 255, 255, 0.8);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         /* Back to Top Button */
@@ -1793,7 +1793,7 @@
                         <a class="nav-link active" href="#beranda">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#profil">Profil</a>
+                        <a class="nav-link" href="profil.html">Profil</a>
                     </li>
                     <li class="nav-item dropdown dropdown-enhanced">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -1802,7 +1802,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-enhanced">
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="andalalin.html">
                                     <div class="dropdown-icon">
                                         <i class="fas fa-traffic-light"></i>
                                     </div>
@@ -1813,7 +1813,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="parkir.html">
                                     <div class="dropdown-icon">
                                         <i class="fas fa-square-parking"></i>
                                     </div>
@@ -2084,7 +2084,7 @@
     
             <div class="news-tabs" data-aos="fade-up" data-aos-delay="100">
                 <button class="tab-btn active" data-tab="berita"><span>Berita Terkini</span></button>
-                <button class="tab-btn" data-tab="kegiatan"><span>Kegiatan & Event</span></button>
+                <button class="tab-btn" data-tab="kegiatan"><span>Kegiatan Terkini</span></button>
             </div>
     
             <div class="tab-content" id="berita">
@@ -2271,6 +2271,7 @@
             <!-- Copyright -->
             <div class="copyright">
                 <p>&copy; 2025 SILALIN – Dinas Perhubungan Kota Cirebon. Seluruh Hak Cipta Dilindungi.</p>
+                <p class="mt-1 small">Desain dan dikembangkan oleh Valen dan Irfan mahasiswa SI UCIC</p>
             </div>
         </div>
     </footer>
@@ -2402,7 +2403,7 @@
         // Dynamic year update
         const currentYear = new Date().getFullYear();
         document.querySelector('.copyright p').innerHTML =
-            `&copy; ${currentYear} SIPERHUB Kota Cirebon. Hak Cipta Dilindungi Undang-Undang.`;
+            `&copy; ${currentYear} SILALIN Kota Cirebon. Hak Cipta Dilindungi Undang-Undang.`;
 
         // Loading simulation
         window.addEventListener('load', function () {
