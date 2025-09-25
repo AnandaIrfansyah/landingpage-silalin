@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layanan Rekomendasi Andalalin - SILALIN Dishub Kota Cirebon</title>
+    <title>Kontak - SILALIN Dishub Kota Cirebon</title>
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -29,7 +29,6 @@
             --gray-bg: #f8fafc;
             --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
             --gradient-gold: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            --gradient-light: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
         }
 
         * {
@@ -375,7 +374,7 @@
             font-size: 1.2rem;
             color: var(--accent-gold);
             font-weight: 600;
-            margin-top: 6.5rem;
+            margin-top: 6rem;
             margin-bottom: 1.5rem;
             text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
             display: inline-block;
@@ -477,213 +476,216 @@
             line-height: 1.6;
         }
 
-        /* Content Card Styles */
-        .content-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+        /* Contact Section Styles */
+        .contact-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             position: relative;
             overflow: hidden;
-            margin-bottom: 2rem;
         }
 
-        .content-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            opacity: 0.03;
+            z-index: 0;
         }
 
-        .content-card::before {
+        .contact-section::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            opacity: 0.03;
+            z-index: 0;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 2.8rem;
+            box-shadow: 0 20px 40px rgba(30, 58, 138, 0.1);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(30, 58, 138, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(30, 58, 138, 0.15);
+        }
+
+        .contact-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 4px;
+            height: 5px;
             background: var(--gradient-primary);
         }
 
-        .content-card h3 {
+        .contact-card h3 {
             color: var(--primary-blue);
             font-weight: 700;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .content-card h3 i {
-            color: var(--accent-gold);
+            margin-bottom: 2rem;
             font-size: 2rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
         }
 
-        .content-card p {
-            color: #4a5568;
-            line-height: 1.7;
+        .contact-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-gold);
+            border-radius: 2px;
+        }
+
+        /* Form Styles */
+        .form-group {
             margin-bottom: 1.5rem;
         }
 
-        .content-card ul {
-            list-style: none;
-            padding-left: 0;
+        .form-label {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
         }
 
-        .content-card ul li {
+        .form-control {
+            border: 2px solid rgba(30, 58, 138, 0.1);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 0.2rem rgba(30, 58, 138, 0.1);
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            border: none;
+            border-radius: 10px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(30, 58, 138, 0.2);
+        }
+
+        /* Contact Info Styles */
+        .contact-info-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .content-card ul li::before {
-            content: '•';
-            color: var(--accent-gold);
-            font-size: 1.5rem;
-            position: absolute;
-            left: 0;
-            top: -3px;
-        }
-
-        /* Process Steps */
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(196px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .step-card {
-            background: white;
+            margin-bottom: 2rem;
+            padding: 1rem;
             border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            text-align: center;
-            flex: 1;
-            min-width: 200px;
-            max-width: 250px;
+            background: rgba(30, 58, 138, 0.03);
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
 
-        .step-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        .contact-info-item:hover {
+            background: rgba(30, 58, 138, 0.08);
+            transform: translateX(5px);
         }
 
-        .step-number {
-            width: 50px;
-            height: 50px;
+        .contact-icon {
+            width: 60px;
+            height: 60px;
             background: var(--gradient-primary);
-            color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
             font-size: 1.5rem;
+            color: white;
+        }
+
+        .contact-details h5 {
+            color: var(--primary-blue);
             font-weight: 700;
-            margin: 0 auto 1rem;
-            position: relative;
-            z-index: 2;
+            margin-bottom: 0.5rem;
         }
 
-        .step-card h4 {
-            color: var(--primary-blue);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .step-card p {
-            color: #6b7280;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        /* Info Box */
-        .info-box {
-            background: rgba(30, 58, 138, 0.05);
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 1.5rem 0;
-            border-left: 4px solid var(--primary-blue);
-        }
-
-        .info-box h4 {
-            color: var(--primary-blue);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .info-box h4 i {
-            color: var(--accent-gold);
-        }
-
-        .info-box p {
+        .contact-details p {
             color: #4a5568;
             margin-bottom: 0;
         }
 
-        /* Download Button */
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+        /* Map Section */
+        .map-section {
+            background: linear-gradient(135deg, #fafbff 0%, #f0f4ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-section::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 300px;
+            height: 300px;
             background: var(--gradient-primary);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
+            border-radius: 50%;
+            opacity: 0.03;
+            z-index: 0;
         }
 
-        .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(30, 58, 138, 0.3);
-            color: white;
+        .map-section::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            opacity: 0.03;
+            z-index: 0;
         }
 
-        /* Faq Info */
-        .faq-item {
-            margin-bottom: 1rem;
-            border-radius: 10px;
+        .map-container {
+            border-radius: 25px;
             overflow: hidden;
+            box-shadow: 0 20px 40px rgba(30, 58, 138, 0.15);
+            height: 400px;
+            position: relative;
         }
 
-        .faq-question {
-            background: var(--gradient-light);
-            padding: 1.5rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-
-        .faq-question:hover {
-            background: var(--light-blue);
-        }
-
-        .faq-answer {
-            padding: 0 1.5rem;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            padding: 1.5rem;
-            max-height: 500px;
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         /* Enhanced Footer */
@@ -830,21 +832,18 @@
                 font-size: 2rem;
             }
 
-            .content-card {
+            .contact-card {
                 padding: 2rem;
             }
 
-            .process-steps {
+            .contact-info-item {
                 flex-direction: column;
-                align-items: center;
+                text-align: center;
             }
 
-            .step-card {
-                max-width: 100%;
-            }
-
-            .contact-info {
-                flex-direction: column;
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
             }
         }
 
@@ -887,7 +886,7 @@
                         <a class="nav-link" href="profil.html">Profil</a>
                     </li>
                     <li class="nav-item dropdown dropdown-enhanced">
-                        <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Layanan
                         </a>
@@ -923,7 +922,7 @@
                         <a class="nav-link" href="faq.html">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="kontak.html">Kontak</a>
+                        <a class="nav-link active" href="kontak.html">Kontak</a>
                     </li>
                     <li class="nav-item ms-2">
                         <a class="nav-link btn-daftar" href="daftar.html">
@@ -945,274 +944,126 @@
         <div class="container hero-content">
             <div class="row justify-content-center text-center align-items-center">
                 <div class="col-lg-8">
-                    <span class="tagline">Layanan Publik</span>
-                    <h1 data-aos="fade-up" data-aos-delay="200">Rekomendasi Andalalin</h1>
-                    <h2 data-aos="fade-up" data-aos-delay="300">Analisis Dampak Lalu Lintas</h2>
-                    <p class="lead text-white">Layanan pengajuan rekomendasi analisis dampak lalu lintas untuk
-                        pembangunan dan kegiatan yang berpotensi mempengaruhi lalu lintas di Kota Cirebon</p>
+                    <span class="tagline">Hubungi Kami untuk Informasi & Bantuan</span>
+                    <h1>Kontak SILALIN</h1>
+                    <h2>Dinas Perhubungan Kota Cirebon</h2>
+                    <p class="lead text-white">Kami siap membantu Anda dengan segala pertanyaan, keluhan, dan informasi
+                        terkait lalu lintas di Kota Cirebon</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <main>
-        <section class="section-padding" id="pengertian">
-            <div class="container">
-                <div class="section-title" data-aos="fade-up">
-                    <h2>Apa itu Rekomendasi Andalalin?</h2>
-                </div>
-        
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="content-card" data-aos="fade-up" data-aos-delay="200">
-                            <h3><i class="bi bi-info-circle"></i> Informasi Umum</h3>
-                            <p>Analisis Dampak Lalu Lintas (Andalalin) adalah studi yang dilakukan untuk mengidentifikasi,
-                                memprediksi, dan mengevaluasi dampak lalu lintas yang mungkin timbul akibat suatu pembangunan atau
-                                kegiatan tertentu.</p>
-                            <p>Andalalin bertujuan untuk memastikan bahwa pembangunan atau kegiatan yang dilakukan tidak menimbulkan
-                                gangguan terhadap kelancaran lalu lintas, keselamatan pengguna jalan, dan lingkungan sekitar.</p>
-                            <p>Di Kota Cirebon, rekomendasi Andalalin dikeluarkan oleh Dinas Perhubungan sebagai dasar pertimbangan
-                                dalam penerbitan izin mendirikan bangunan atau izin kegiatan.</p>
-                        </div>
+    <!-- Contact Section -->
+    <section class="contact-section section-padding">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Hubungi Kami</h2>
+                <p>Silakan gunakan formulir di bawah ini untuk menghubungi kami atau gunakan informasi kontak yang
+                    tersedia</p>
+            </div>
+
+            <div class="row">
+                <!-- Formulir Kontak -->
+                <div class="col-lg-6 mb-4" data-aos="fade-right" data-aos-delay="200">
+                    <div class="contact-card">
+                        <h3>Formulir Kontak</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="name"
+                                    placeholder="Masukkan nama lengkap Anda" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Alamat Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="nama@contoh.com"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subjek</label>
+                                <input type="text" class="form-control" id="subject" placeholder="Subjek pesan Anda"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">Pesan</label>
+                                <textarea class="form-control" id="message" rows="5"
+                                    placeholder="Tulis pesan Anda di sini..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Kirim Pesan</button>
+                        </form>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section class="section-padding bg-light" id="dasar-hukum">
-            <div class="container">
-                <div class="section-title" data-aos="fade-up">
-                    <h2>Dasar Hukum</h2>
-                    <p>Berikut adalah dasar hukum yang mengatur tentang Rekomendasi Andalalin di Kota Cirebon</p>
-                </div>
-        
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="content-card" data-aos="fade-up" data-aos-delay="200">
-                            <h3><i class="bi bi-journal-text"></i> Peraturan Perundang-undangan</h3>
-                            <ul>
-                                <li>Undang-Undang Nomor 22 Tahun 2009 tentang Lalu Lintas dan Angkutan Jalan</li>
-                                <li>Peraturan Pemerintah Nomor 32 Tahun 2011 tentang Manajemen dan Rekayasa, Analisis Dampak, serta
-                                    Manajemen Kebutuhan Lalu Lintas</li>
-                                <li>Peraturan Menteri Perhubungan Nomor 17 Tahun 2021 tentang Pedoman Teknis Analisis Dampak Lalu
-                                    Lintas</li>
-                                <li>Peraturan Daerah Kota Cirebon Nomor 5 Tahun 2019 tentang Penyelenggaraan Lalu Lintas dan
-                                    Angkutan Jalan</li>
-                                <li>Peraturan Walikota Cirebon Nomor 45 Tahun 2020 tentang Tata Cara Pemberian Rekomendasi Analisis
-                                    Dampak Lalu Lintas</li>
+                <!-- Info Kontak -->
+                <div class="col-lg-6 mb-4" data-aos="fade-left" data-aos-delay="200">
+                    <div class="contact-card">
+                        <h3>Info Kontak</h3>
 
-                                
-                            </ul>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Alamat Kantor</h5>
+                                <p>Jl. Terusan Pemuda No.8, Sunyaragi, Kec. Kesambi, Kota Cirebon, Jawa Barat 45132
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section class="section-padding" id="persyaratan">
-            <div class="container">
-                <div class="section-title" data-aos="fade-up">
-                    <h2>Persyaratan Permohonan</h2>
-                    <p>Berikut adalah persyaratan yang harus dipenuhi untuk mengajukan Rekomendasi Andalalin</p>
-                </div>
-        
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="content-card" data-aos="fade-up" data-aos-delay="200">
-                            <h3><i class="bi bi-file-earmark-check"></i> Dokumen yang Diperlukan</h3>
-                            <p>Untuk mengajukan permohonan Rekomendasi Andalalin, pemohon harus menyiapkan dokumen-dokumen
-                                berikut:</p>
-                            <ul>
-                                <li>Formulir permohonan rekomendasi Andalalin yang telah diisi lengkap</li>
-                                <li>Fotokopi KTP pemohon yang masih berlaku</li>
-                                <li>Fotokopi akta pendirian perusahaan (untuk badan hukum)</li>
-                                <li>Fotokopi surat kepemilikan tanah atau bukti penguasaan tanah</li>
-                                <li>Gambar rencana tapak (site plan) dan denah bangunan</li>
-                                <li>Dokumen studi Andalalin yang telah disusun oleh konsultan berkompeten</li>
-                                <li>Surat pernyataan kesanggupan melaksanakan rekomendasi yang diberikan</li>
-                                <li>Dokumen pendukung lain yang dipersyaratkan sesuai jenis kegiatan</li>
-                            </ul>
-        
-                            <div class="info-box" data-aos="fade-up" data-aos-delay="300">
-                                <h4><i class="bi bi-exclamation-circle"></i> Catatan Penting</h4>
-                                <p>Semua dokumen harus disiapkan dalam bentuk fotokopi yang telah dilegalisasi atau
-                                    menunjukkan dokumen asli untuk verifikasi. Dokumen yang tidak lengkap akan
-                                    mengakibatkan penundaan proses permohonan.</p>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Telepon</h5>
+                                <p>(0231) 489717</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Email</h5>
+                                <p>dishub@cirebonkota.go.id</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Jam Layanan</h5>
+                                <p>Senin - Jumat: 08.00 - 16.00 WIB<br>Sabtu - Minggu: Tutup</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section-padding bg-light" id="alur-proses">
-            <div class="container">
-                <div class="section-title" data-aos="fade-up">
-                    <h2>Alur Proses Pelayanan</h2>
-                    <p>Berikut adalah tahapan pengajuan rekomendasi Andalalin di Dinas Perhubungan Kota Cirebon:</p>
-                </div>
-        
-                <div class="process-steps">
-                    <div class="step-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="step-number">1</div>
-                        <h4>Pendaftaran</h4>
-                        <p>Pemohon mengisi formulir dan melengkapi persyaratan administrasi di loket pelayanan atau
-                            melalui sistem online.</p>
-                    </div>
-                
-                    <div class="step-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="step-number">2</div>
-                        <h4>Verifikasi</h4>
-                        <p>Petugas melakukan pemeriksaan kelengkapan dan keabsahan dokumen yang diajukan oleh pemohon.</p>
-                    </div>
-                
-                    <div class="step-card" data-aos="fade-up" data-aos-delay="400">
-                        <div class="step-number">3</div>
-                        <h4>Survey Lapangan</h4>
-                        <p>Tim teknis melakukan survey lokasi untuk memastikan kesesuaian dengan persyaratan teknis yang
-                            berlaku.</p>
-                    </div>
-                
-                    <div class="step-card" data-aos="fade-up" data-aos-delay="500">
-                        <div class="step-number">4</div>
-                        <h4>Analisis</h4>
-                        <p>Hasil survey dianalisis dan dievaluasi oleh tim teknis untuk menentukan kelayakan lokasi andalalin.</p>
-                    </div>
-                
-                    <div class="step-card" data-aos="fade-up" data-aos-delay="600">
-                        <div class="step-number">5</div>
-                        <h4>Pernyataan</h4>
-                        <p>Pemohon menandatangani pernyataan kesanggupan mematuhi ketentuan teknis dan peraturan yang berlaku.
-                        </p>
-                    </div>
-                
-                    <div class="step-card" data-aos="fade-up" data-aos-delay="700">
-                        <div class="step-number">6</div>
-                        <h4>Rekomendasi</h4>
-                        <p>Rekomendasi andalalin diterbitkan dan dapat diambil oleh pemohon di loket pelayanan.</p>
+    <!-- Map Section -->
+    <section class="map-section section-padding">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Lokasi Kantor</h2>
+                <p>Kunjungi kantor kami di alamat berikut atau lihat peta untuk petunjuk arah</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.271887134075!2d108.53535367475523!3d-6.730218193265895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f1df65888691d%3A0x31829828b2843021!2sTransportation%20Agency%20Cirebon!5e1!3m2!1sen!2sid!4v1758773416697!5m2!1sen!2sid"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="section-padding" id="estimasi">
-            <div class="container">
-                <div class="section-title" data-aos="fade-up">
-                    <h2>Estimasi Waktu & Biaya</h2>
-                    <p>Informasi mengenai waktu proses dan biaya yang diperlukan untuk pengajuan Rekomendasi Andalalin</p>
-                </div>
-        
-                <div class="row">
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="content-card h-100">
-                            <h3><i class="bi bi-clock"></i> Estimasi Waktu</h3>
-                            <p>Proses pengajuan rekomendasi Andalalin memerlukan waktu maksimal <strong>14 hari kerja</strong>
-                                sejak dokumen dinyatakan lengkap dan valid.</p>
-                            <div class="info-box">
-                                <h4><i class="bi bi-info-circle"></i> Catatan</h4>
-                                <p>Waktu proses dapat berubah tergantung pada kompleksitas lokasi dan kelengkapan
-                                    dokumen yang diajukan.</p>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="content-card h-100">
-                            <h3><i class="bi bi-cash-coin"></i> Estimasi Biaya</h3>
-                            <p>Pelayanan rekomendasi Andalalin <strong>tidak dikenakan biaya</strong> (gratis) sesuai dengan
-                                Peraturan Walikota Cirebon tentang Pelayanan Publik.</p>
-                            <div class="info-box">
-                                <h4><i class="bi bi-exclamation-circle"></i> Informasi</h4>
-                                <p>Pastikan seluruh proses pengajuan dilakukan melalui jalur resmi Dinas Perhubungan bidang lalu lintas untuk menghindari pungutan liar.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-padding bg-light" id="download">
-            <div class="container">
-                <div class="section-title" data-aos="fade-up">
-                    <h2>Download Formulir & Panduan</h2>
-                    <p>Unduh formulir dan panduan yang diperlukan untuk pengajuan Rekomendasi Andalalin</p>
-                </div>
-        
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="content-card" data-aos="fade-up" data-aos-delay="200">
-                            <h3><i class="bi bi-download"></i> Dokumen yang Tersedia</h3>
-                            <p>Berikut adalah formulir dan panduan yang dapat diunduh untuk mempermudah proses pengajuan
-                                Rekomendasi Andalalin:</p>
-        
-                            <a href="#" class="download-btn">
-                                <i class="bi bi-file-earmark-pdf"></i> Formulir Permohonan Rekomendasi Andalalin
-                            </a>
-        
-                            <a href="#" class="download-btn">
-                                <i class="bi bi-file-earmark-text"></i> Panduan Pengisian Formulir
-                            </a>
-        
-                            <a href="#" class="download-btn">
-                                <i class="bi bi-file-earmark-pdf"></i> Checklist Persyaratan Dokumen
-                            </a>
-        
-                            <div class="info-box mt-4" data-aos="fade-up" data-aos-delay="300">
-                                <h4><i class="bi bi-lightbulb"></i> Tips Pengajuan</h4>
-                                <p>Sebelum mengajukan permohonan, pastikan Anda telah membaca panduan dengan seksama dan
-                                    melengkapi semua persyaratan yang diperlukan. Hal ini akan mempercepat proses
-                                    pengajuan rekomendasi andalalin.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-padding" id="faq">
-            <div class="container">
-                <div class="section-title" data-aos="fade-up">
-                    <h2>Pertanyaan Umum Andalalin(FAQ)</h2>
-                </div>
-                <div class="content-card" data-aos="fade-up" data-aos-delay="450">
-                    <h3><i class="bi bi-question-circle"></i> Pertanyaan Umum (FAQ)</h3>
-                
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Siapa yang wajib mengajukan Andalalin?</span>
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Setiap orang atau badan hukum yang akan membangun atau melakukan kegiatan yang berpotensi
-                                menimbulkan dampak lalu lintas sesuai dengan ketentuan peraturan perundang-undangan.</p>
-                        </div>
-                    </div>
-                
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Berapa lama masa berlaku rekomendasi Andalalin?</span>
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Rekomendasi Andalalin berlaku selama 2 (dua) tahun sejak tanggal diterbitkan, dan dapat
-                                diperpanjang dengan mengajukan permohonan kembali.</p>
-                        </div>
-                    </div>
-                
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Apakah ada sanksi jika tidak mengajukan Andalalin?</span>
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Ya, sesuai dengan peraturan perundang-undangan, pelanggaran kewajiban Andalalin dapat dikenai
-                                sanksi administratif hingga pencabutan izin.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer id="kontak">
@@ -1289,17 +1140,14 @@
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS -->
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS Animation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
     <script>
         // Initialize AOS
         AOS.init({
             duration: 1000,
-            once: true,
-            offset: 100
+            once: true
         });
 
         // Navbar scroll effect
@@ -1312,28 +1160,29 @@
             }
         });
 
-        // Initialize scroll effect on page load
-        document.addEventListener('DOMContentLoaded', function () {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            }
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Terima kasih! Pesan Anda telah berhasil dikirim. Kami akan menghubungi Anda segera.');
+            this.reset();
         });
 
-        document.querySelectorAll('.faq-question').forEach(question => {
-                question.addEventListener('click', () => {
-                    const faqItem = question.parentElement;
-                    faqItem.classList.toggle('active');
+        // Fade in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
 
-                    // Rotate chevron icon
-                    const icon = question.querySelector('i');
-                    if (faqItem.classList.contains('active')) {
-                        icon.style.transform = 'rotate(180deg)';
-                    } else {
-                        icon.style.transform = 'rotate(0deg)';
-                    }
-                });
+        const fadeInOnScroll = function () {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
             });
+        };
+
+        window.addEventListener('scroll', fadeInOnScroll);
+        fadeInOnScroll(); // Check on load
     </script>
 </body>
 
