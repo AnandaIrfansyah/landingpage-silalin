@@ -41,7 +41,7 @@
         }
 
         /* Enhanced Navbar */
-        .navbar {
+                .navbar {
             background: rgba(255, 255, 255, 0.1) !important;
             backdrop-filter: blur(20px);
             box-shadow: none;
@@ -108,7 +108,7 @@
             transition: all 0.3s ease;
             position: relative;
             border-radius: 25px;
-            margin: 0 5px;
+            margin: 5px 0 5px 5px;
         }
 
         .navbar.scrolled .nav-link {
@@ -240,6 +240,57 @@
             transform: rotate(180deg);
         }
 
+        /* Styling untuk tombol Daftar */
+        .navbar-nav .nav-link.btn-daftar {
+            background: var(--gradient-gold);
+            color: var(--primary-blue) !important;
+            border-radius: 25px;
+            margin-left: 10px;
+            padding: 0.5rem 1.5rem !important;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* State normal untuk navbar biasa */
+        .navbar:not(.scrolled) .nav-link.btn-daftar {
+            color: var(--primary-blue) !important;
+        }
+
+        /* State untuk navbar scrolled */
+        .navbar.scrolled .nav-link.btn-daftar {
+            color: var(--primary-blue) !important;
+            background: var(--gradient-gold);
+        }
+
+        /* Hover effect yang benar */
+        .navbar-nav .nav-link.btn-daftar:hover {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.5);
+            color: var(--primary-blue) !important;
+        }
+
+        /* Efek shine pada hover */
+        .navbar-nav .nav-link.btn-daftar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .navbar-nav .nav-link.btn-daftar:hover::before {
+            left: 100%;
+        }
+
+
         /* Mobile responsiveness */
         @media (max-width: 991px) {
             .dropdown-menu-enhanced {
@@ -259,6 +310,11 @@
             
             .navbar.scrolled .dropdown-item {
                 color: #1e3a8a;
+            }
+            .navbar-nav .nav-link.btn-daftar {
+                margin: 5px 0 5px 0;
+                text-align: center;
+                width: 200px;
             }
         }
 
@@ -1071,7 +1127,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Beranda</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ">
                         <a class="nav-link active" href="profil.html">Profil</a>
                     </li>
                     <li class="nav-item dropdown dropdown-enhanced">
@@ -1105,13 +1161,18 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#ppid">Berita & Kegiatan</a>
+                        <a class="nav-link" href="beritakegiatan.html">Berita & Kegiatan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#informasi">FAQ</a>
+                        <a class="nav-link" href="faq.html">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#kontak">Kontak</a>
+                        <a class="nav-link" href="kontak.html">Kontak</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="nav-link btn-daftar" href="daftar.html">
+                            <i class="bi bi-person-plus me-1"></i>Daftar
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -1308,11 +1369,13 @@
                 <div class="col-lg-4 mb-4" data-aos="fade-up">
                     <div class="footer-logo">
                         <div class="d-flex align-items-center mb-3">
-                            <img src="assets/img/logo/logo-pemkot.png" alt="Logo SILALIN"
+                            <img src="assets/img/logo/logo-pemkot.png" alt="Logo Pemerintah"
+                                style="max-height:70px; margin-right:15px;">
+                            <img src="assets/img/logo/dishubpng.png" alt="Logo Dishub"
                                 style="max-height:70px; margin-right:15px;">
                             <div>
                                 <h5 class="mb-1">SILALIN</h5>
-                                <p class="mb-0 text-light small">Sistem Lalu Lintas Kota Cirebon</p>
+                                <p class="mb-0 text-light small">Sistem Lalu Lintas Dishub Kota Cirebon</p>
                             </div>
                         </div>
                         <p>Portal resmi Bidang Lalu Lintas, Dinas Perhubungan Kota Cirebon.
@@ -1324,11 +1387,11 @@
                 <!-- Alamat & Kontak -->
                 <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <h5 class="mb-3">Alamat</h5>
-                    <p class="mb-3"><i class="bi bi-geo-alt me-2"></i>Jl. Brigjen Darsono No. 1, Kota Cirebon, Jawa Barat
-                        45122</p>
+                    <p class="mb-3"><i class="bi bi-geo-alt me-2"></i>Jl. Terusan Pemuda No.8, Sunyaragi, Kesambi, Kota
+                        Cirebon, Jawa Barat 45132, Indonesia</p>
     
                     <h6 class="mb-2">Kontak</h6>
-                    <p class="mb-2"><i class="bi bi-telephone me-2"></i>(0231) 123456</p>
+                    <p class="mb-2"><i class="bi bi-telephone me-2"></i>(0231) 489717</p>
                     <p class="mb-3"><i class="bi bi-envelope me-2"></i>dishub@cirebonkota.go.id</p>
     
                     <h6 class="mb-2">Ikuti Kami</h6>
