@@ -51,7 +51,7 @@ window.addEventListener("scroll", fadeInOnScroll);
 fadeInOnScroll();
 
 // FAQ functionality (support versi umum & andalalin)
-document.querySelectorAll(".faq-question, .andalalin-faq-question").forEach((question) => {
+document.querySelectorAll(".faq-faq-question, .andalalin-faq-question, .parkir-faq-question").forEach((question) => {
   question.addEventListener("click", () => {
     const faqItem = question.parentElement;
     faqItem.classList.toggle("active");
@@ -168,14 +168,14 @@ document.querySelectorAll(".service-card, .news-card, .program-card").forEach((c
 });
 
 // Parallax effect
-window.addEventListener("scroll", function () {
-  const parallax = document.querySelector(".hero-section, .andalalin-hero-section");
-  if (parallax) {
-    const scrolled = window.pageYOffset;
-    const speed = scrolled * 0.5;
-    parallax.style.transform = `translateY(${speed}px)`;
-  }
-});
+// window.addEventListener("scroll", function () {
+//   const parallax = document.querySelector(".hero-section, .index-hero-section, .profil-hero-section, .kontak-hero-section, .parkir-hero-section, .andalalin-hero-section, .faq-hero-section, .berita-hero-section");
+//   if (parallax) {
+//     const scrolled = window.pageYOffset;
+//     const speed = scrolled * 0.5;
+//     parallax.style.transform = `translateY(${speed}px)`;
+//   }
+// });
 
 // Dynamic year update
 const copyright = document.querySelector(".copyright p");

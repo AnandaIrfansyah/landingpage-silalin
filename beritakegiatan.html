@@ -1,472 +1,455 @@
 <!DOCTYPE html>
 <html lang="id">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Berita & Kegiatan - SILALIN Dishub Kota Cirebon</title>
-    <link rel="icon" type="image/png" href="assets/img/logo/logo-pemkot.png">
+    <link rel="icon" type="image/png" href="assets/img/logo/logo-pemkot.png" />
 
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Bootstrap Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
-        rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <!-- AOS Animation -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/berita-kegiatan.css">
-</head>
+    <link href="assets/css/style.css"  rel="stylesheet" />
+  </head>
 
-<body>
+  <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="assets/img/logo/logo-pemkot.png" alt="Logo SIPERHUB" class="logo">
-                <div class="brand-text">
-                    <span class="small-text">Pemerintah Kota Cirebon</span>
-                    <span class="large-text">Dinas Perhubungan</span>
-                </div>
-            </a>
-    
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="profil.html">Profil</a>
-                    </li>
-                    <li class="nav-item dropdown dropdown-enhanced">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Layanan
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-enhanced">
-                            <li>
-                                <a class="dropdown-item" href="andalalin.html">
-                                    <div class="dropdown-icon">
-                                        <i class="fas fa-traffic-light"></i>
-                                    </div>
-                                    <div class="dropdown-text">
-                                        <span class="dropdown-title">Rekomendasi Andalalin</span>
-                                        <small class="dropdown-desc">Pengajuan rekomendasi lalu lintas</small>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="parkir.html">
-                                    <div class="dropdown-icon">
-                                        <i class="fas fa-square-parking"></i>
-                                    </div>
-                                    <div class="dropdown-text">
-                                        <span class="dropdown-title">Rekomendasi Parkir</span>
-                                        <small class="dropdown-desc">Pengajuan izin area parkir</small>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="beritakegiatan.html">Berita & Kegiatan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="faq.html">FAQ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="kontak.html">Kontak</a>
-                    </li>
-                    <li class="nav-item ms-2">
-                        <a class="nav-link btn-daftar" href="daftar.html">
-                            <i class="bi bi-person-plus me-1"></i>Daftar
-                        </a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="assets/img/logo/logo-pemkot.png" alt="Logo SIPERHUB" class="logo" />
+          <div class="brand-text">
+            <span class="small-text">Pemerintah Kota Cirebon</span>
+            <span class="large-text">Dinas Perhubungan</span>
+          </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profil.html">Profil</a>
+            </li>
+            <li class="nav-item dropdown dropdown-enhanced">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Layanan </a>
+              <ul class="dropdown-menu dropdown-menu-enhanced">
+                <li>
+                  <a class="dropdown-item" href="andalalin.html">
+                    <div class="dropdown-icon">
+                      <i class="fas fa-traffic-light"></i>
+                    </div>
+                    <div class="dropdown-text">
+                      <span class="dropdown-title">Rekomendasi Andalalin</span>
+                      <small class="dropdown-desc">Pengajuan rekomendasi lalu lintas</small>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="parkir.html">
+                    <div class="dropdown-icon">
+                      <i class="fas fa-square-parking"></i>
+                    </div>
+                    <div class="dropdown-text">
+                      <span class="dropdown-title">Rekomendasi Parkir</span>
+                      <small class="dropdown-desc">Pengajuan izin area parkir</small>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="beritakegiatan.html">Berita & Kegiatan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="faq.html">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kontak.html">Kontak</a>
+            </li>
+            <li class="nav-item ms-2">
+              <a class="nav-link btn-daftar" href="daftar.html"> <i class="bi bi-person-plus me-1"></i>Daftar </a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="floating-elements">
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
+    <section class="berita-hero-section">
+      <div class="berita-floating-elements">
+        <div class="berita-floating-element"></div>
+        <div class="berita-floating-element"></div>
+        <div class="berita-floating-element"></div>
+      </div>
+      <div class="container berita-hero-content">
+        <div class="row justify-content-center text-center align-items-center">
+          <div class="col-lg-8">
+            <span class="berita-tagline">Informasi Terkini</span>
+            <h1 data-aos="fade-up" data-aos-delay="200">Berita & Kegiatan</h1>
+            <h2 data-aos="fade-up" data-aos-delay="300">Bidang Lalu Lintas Dinas Perhubungan Kota Cirebon</h2>
+          </div>
         </div>
-        <div class="container hero-content">
-            <div class="row justify-content-center text-center align-items-center">
-                <div class="col-lg-8">
-                    <span class="tagline">Informasi Terkini</span>
-                    <h1 data-aos="fade-up" data-aos-delay="200">Berita & Kegiatan</h1>
-                    <h2 data-aos="fade-up" data-aos-delay="300">Bidang Lalu Lintas Dinas Perhubungan Kota Cirebon</h2>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
     <!-- Berita & Kegiatan Section -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Berita & Kegiatan Terbaru</h2>
-                <p>Dapatkan informasi terkini seputar kegiatan dan berita dari Dinas Perhubungan Bidang Lalu Lintas Kota Cirebon</p>
-            </div>
-
-            <!-- Tabs -->
-            <div class="news-tabs" data-aos="fade-up" data-aos-delay="200">
-                <ul class="nav nav-tabs justify-content-center" id="newsTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="berita-tab" data-bs-toggle="tab" data-bs-target="#berita"
-                            type="button" role="tab" aria-controls="berita" aria-selected="true">Berita</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="kegiatan-tab" data-bs-toggle="tab" data-bs-target="#kegiatan"
-                            type="button" role="tab" aria-controls="kegiatan" aria-selected="false">Kegiatan</button>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Tab Content -->
-            <div class="tab-content" id="newsTabContent">
-                <!-- Berita Tab -->
-                <div class="tab-pane fade show active" id="berita" role="tabpanel" aria-labelledby="berita-tab">
-                    <div class="row">
-                        <!-- Berita 1 -->
-                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                            <div class="news-card">
-                                <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');">
-                                </div>
-                                <div class="news-date ms-3">15 Maret 2024</div>
-                                <div class="news-content">
-                                    <span class="news-category">Berita</span>
-                                    <h3 class="news-title">Penataan Ruang Parkir di Pusat Kota Cirebon</h3>
-                                    <p class="news-excerpt">Dinas Perhubungan Kota Cirebon melakukan penataan ulang
-                                        ruang parkir di pusat kota untuk meningkatkan kenyamanan pengguna jalan.</p>
-                                    <a href="#" class="read-more">Baca Selengkapnya <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Berita 2 -->
-                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-                            <div class="news-card">
-                                <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');">
-                                </div>
-                                <div class="news-date ms-3">10 Maret 2024</div>
-                                <div class="news-content">
-                                    <span class="news-category">Berita</span>
-                                    <h3 class="news-title">Peningkatan Pelayanan SIM Online di Kota Cirebon</h3>
-                                    <p class="news-excerpt">Dishub Kota Cirebon meluncurkan layanan SIM Online untuk
-                                        memudahkan masyarakat dalam mengurus perpanjangan SIM.</p>
-                                    <a href="#" class="read-more">Baca Selengkapnya <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Berita 3 -->
-                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="400">
-                            <div class="news-card">
-                                <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');">
-                                </div>
-                                <div class="news-date ms-3">5 Maret 2024</div>
-                                <div class="news-content">
-                                    <span class="news-category">Berita</span>
-                                    <h3 class="news-title">Penertiban Angkutan Umum di Terminal Harjamukti</h3>
-                                    <p class="news-excerpt">Dishub Kota Cirebon melakukan penertiban angkutan umum di
-                                        Terminal Harjamukti untuk meningkatkan ketertiban dan keselamatan.</p>
-                                    <a href="#" class="read-more">Baca Selengkapnya <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Berita 4 -->
-                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="500">
-                            <div class="news-card">
-                                <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');">
-                                </div>
-                                <div class="news-date ms-3">28 Februari 2024</div>
-                                <div class="news-content">
-                                    <span class="news-category">Berita</span>
-                                    <h3 class="news-title">Pembangunan Halte Bus Modern di Kota Cirebon</h3>
-                                    <p class="news-excerpt">Pembangunan halte bus modern di beberapa titik strategis
-                                        kota untuk meningkatkan kenyamanan penumpang angkutan umum.</p>
-                                    <a href="#" class="read-more">Baca Selengkapnya <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Berita 5 -->
-                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="600">
-                            <div class="news-card">
-                                <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');">
-                                </div>
-                                <div class="news-date ms-3">20 Februari 2024</div>
-                                <div class="news-content">
-                                    <span class="news-category">Berita</span>
-                                    <h3 class="news-title">Sosialisasi Keselamatan Berkendara untuk Pelajar</h3>
-                                    <p class="news-excerpt">Dishub Kota Cirebon menggelar sosialisasi keselamatan
-                                        berkendara bagi pelajar SMA di seluruh wilayah kota.</p>
-                                    <a href="#" class="read-more">Baca Selengkapnya <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Berita 6 -->
-                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="700">
-                            <div class="news-card">
-                                <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');">
-                                </div>
-                                <div class="news-date ms-3">15 Februari 2024</div>
-                                <div class="news-content">
-                                    <span class="news-category">Berita</span>
-                                    <h3 class="news-title">Penghargaan Kota Cirebon sebagai Kota Transportasi
-                                        Berkelanjutan</h3>
-                                    <p class="news-excerpt">Kota Cirebon meraih penghargaan sebagai kota dengan sistem
-                                        transportasi berkelanjutan terbaik tingkat regional.</p>
-                                    <a href="#" class="read-more">Baca Selengkapnya <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <nav aria-label="Pagination Berita" data-aos="fade-up" data-aos-delay="800">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-                                    <i class="fas fa-chevron-left"></i>
-                                </a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">
-                                    <i class="fas fa-chevron-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <!-- Kegiatan Tab -->
-                <div class="tab-pane fade" id="kegiatan" role="tabpanel" aria-labelledby="kegiatan-tab">
-                    <div class="row">
-                        <!-- Kegiatan 1 -->
-                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                            <div class="news-card">
-                                <div class="news-img"
-                                    style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');"></div>
-                                <div class="news-date ms-3">25 Maret 2024</div>
-                                <div class="news-content">
-                                    <span class="news-category">Kegiatan</span>
-                                    <h3 class="news-title">Workshop Peningkatan Pelayanan Transportasi Publik</h3>
-                                    <p class="news-excerpt">Workshop untuk meningkatkan kualitas pelayanan transportasi
-                                        publik dengan melibatkan operator dan masyarakat.</p>
-                                    <a href="#" class="read-more">Baca Selengkapnya <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Kegiatan 2 -->
-                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-                            <div class="news-card">
-                                <div class="news-img"
-                                    style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');"></div>
-                                <div class="news-date ms-3">20 Maret 2024</div>
-                                <div class="news-content">
-                                    <span class="news-category">Kegiatan</span>
-                                    <h3 class="news-title">Pelatihan Keselamatan Lalu Lintas bagi Sopir Angkutan Umum
-                                    </h3>
-                                    <p class="news-excerpt">Pelatihan keselamatan lalu lintas bagi sopir angkutan umum
-                                        untuk mengurangi angka kecelakaan di jalan raya.</p>
-                                    <a href="#" class="read-more">Baca Selengkapnya <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Kegiatan 3 -->
-                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="400">
-                            <div class="news-card">
-                                <div class="news-img"
-                                    style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');"></div>
-                                <div class="news-date ms-3">15 Maret 2024</div>
-                                <div class="news-content">
-                                    <span class="news-category">Kegiatan</span>
-                                    <h3 class="news-title">Pemeliharaan Rambu Lalu Lintas di Seluruh Kota</h3>
-                                    <p class="news-excerpt">Kegiatan pemeliharaan dan perbaikan rambu lalu lintas untuk
-                                        memastikan keamanan dan kenyamanan pengguna jalan.</p>
-                                    <a href="#" class="read-more">Baca Selengkapnya <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Kegiatan 4 -->
-                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="500">
-                            <div class="news-card">
-                                <div class="news-img"
-                                    style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');"></div>
-                                <div class="news-date ms-3">10 Maret 2024</div>
-                                <div class="news-content">
-                                    <span class="news-category">Kegiatan</span>
-                                    <h3 class="news-title">Monitoring Kualitas Udara di Titik Kemacetan</h3>
-                                    <p class="news-excerpt">Kegiatan monitoring kualitas udara di titik-titik kemacetan
-                                        untuk menilai dampak transportasi terhadap lingkungan.</p>
-                                    <a href="#" class="read-more">Baca Selengkapnya <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Kegiatan 5 -->
-                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="600">
-                            <div class="news-card">
-                                <div class="news-img"
-                                    style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');"></div>
-                                <div class="news-date ms-3">5 Maret 2024</div>
-                                <div class="news-content">
-                                    <span class="news-category">Kegiatan</span>
-                                    <h3 class="news-title">Rapat Koordinasi Penanganan Kemacetan di Jam Sibuk</h3>
-                                    <p class="news-excerpt">Rapat koordinasi untuk membahas strategi penanganan
-                                        kemacetan di jam sibuk dengan melibatkan berbagai pihak terkait.</p>
-                                    <a href="#" class="read-more">Baca Selengkapnya <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Kegiatan 6 -->
-                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="700">
-                            <div class="news-card">
-                                <div class="news-img"
-                                    style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');"></div>
-                                <div class="news-date ms-3">1 Maret 2024</div>
-                                <div class="news-content">
-                                    <span class="news-category">Kegiatan</span>
-                                    <h3 class="news-title">Penandatanganan MoU dengan Perguruan Tinggi</h3>
-                                    <p class="news-excerpt">Penandatanganan MoU dengan perguruan tinggi untuk
-                                        pengembangan sistem transportasi cerdas di Kota Cirebon.</p>
-                                    <a href="#" class="read-more">Baca Selengkapnya <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <nav aria-label="Pagination Berita" data-aos="fade-up" data-aos-delay="800">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-                                    <i class="fas fa-chevron-left"></i>
-                                </a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">
-                                    <i class="fas fa-chevron-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+    <section class="berita-section-padding">
+      <div class="container">
+        <div class="berita-section-title" data-aos="fade-up">
+          <h2>Berita & Kegiatan Terbaru</h2>
+          <p>Dapatkan informasi terkini seputar kegiatan dan berita dari Dinas Perhubungan Bidang Lalu Lintas Kota Cirebon</p>
         </div>
+
+        <!-- Tabs -->
+        <div class="berita-news-tabs" data-aos="fade-up" data-aos-delay="200">
+          <ul class="nav nav-tabs justify-content-center" id="newsTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="berita-tab" data-bs-toggle="tab" data-bs-target="#berita" type="button" role="tab" aria-controls="berita" aria-selected="true">Berita</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="kegiatan-tab" data-bs-toggle="tab" data-bs-target="#kegiatan" type="button" role="tab" aria-controls="kegiatan" aria-selected="false">Kegiatan</button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="newsTabContent">
+          <!-- Berita Tab -->
+          <div class="tab-pane fade show active" id="berita" role="tabpanel" aria-labelledby="berita-tab">
+            <div class="row">
+              <!-- Berita 1 -->
+              <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="berita-news-card">
+                  <div
+                    class="berita-news-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"
+                  ></div>
+                  <div class="berita-news-date ms-3">15 Maret 2024</div>
+                  <div class="berita-news-content">
+                    <span class="berita-news-category">Berita</span>
+                    <h3 class="berita-news-title">Penataan Ruang Parkir di Pusat Kota Cirebon</h3>
+                    <p class="berita-news-excerpt">Dinas Perhubungan Kota Cirebon melakukan penataan ulang ruang parkir di pusat kota untuk meningkatkan kenyamanan pengguna jalan.</p>
+                    <a href="#" class="berita-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Berita 2 -->
+              <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="berita-news-card">
+                  <div
+                    class="berita-news-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"
+                  ></div>
+                  <div class="berita-news-date ms-3">10 Maret 2024</div>
+                  <div class="berita-news-content">
+                    <span class="berita-news-category">Berita</span>
+                    <h3 class="berita-news-title">Peningkatan Pelayanan SIM Online di Kota Cirebon</h3>
+                    <p class="berita-news-excerpt">Dishub Kota Cirebon meluncurkan layanan SIM Online untuk memudahkan masyarakat dalam mengurus perpanjangan SIM.</p>
+                    <a href="#" class="berita-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Berita 3 -->
+              <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="berita-news-card">
+                  <div
+                    class="berita-news-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"
+                  ></div>
+                  <div class="berita-news-date ms-3">5 Maret 2024</div>
+                  <div class="berita-news-content">
+                    <span class="berita-news-category">Berita</span>
+                    <h3 class="berita-news-title">Penertiban Angkutan Umum di Terminal Harjamukti</h3>
+                    <p class="berita-news-excerpt">Dishub Kota Cirebon melakukan penertiban angkutan umum di Terminal Harjamukti untuk meningkatkan ketertiban dan keselamatan.</p>
+                    <a href="#" class="berita-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Berita 4 -->
+              <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="500">
+                <div class="berita-news-card">
+                  <div
+                    class="berita-news-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"
+                  ></div>
+                  <div class="berita-news-date ms-3">28 Februari 2024</div>
+                  <div class="berita-news-content">
+                    <span class="berita-news-category">Berita</span>
+                    <h3 class="berita-news-title">Pembangunan Halte Bus Modern di Kota Cirebon</h3>
+                    <p class="berita-news-excerpt">Pembangunan halte bus modern di beberapa titik strategis kota untuk meningkatkan kenyamanan penumpang angkutan umum.</p>
+                    <a href="#" class="berita-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Berita 5 -->
+              <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="600">
+                <div class="berita-news-card">
+                  <div
+                    class="berita-news-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"
+                  ></div>
+                  <div class="berita-news-date ms-3">20 Februari 2024</div>
+                  <div class="berita-news-content">
+                    <span class="berita-news-category">Berita</span>
+                    <h3 class="berita-news-title">Sosialisasi Keselamatan Berkendara untuk Pelajar</h3>
+                    <p class="berita-news-excerpt">Dishub Kota Cirebon menggelar sosialisasi keselamatan berkendara bagi pelajar SMA di seluruh wilayah kota.</p>
+                    <a href="#" class="berita-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Berita 6 -->
+              <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="700">
+                <div class="berita-news-card">
+                  <div
+                    class="berita-news-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"
+                  ></div>
+                  <div class="berita-news-date ms-3">15 Februari 2024</div>
+                  <div class="berita-news-content">
+                    <span class="berita-news-category">Berita</span>
+                    <h3 class="berita-news-title">Penghargaan Kota Cirebon sebagai Kota Transportasi Berkelanjutan</h3>
+                    <p class="berita-news-excerpt">Kota Cirebon meraih penghargaan sebagai kota dengan sistem transportasi berkelanjutan terbaik tingkat regional.</p>
+                    <a href="#" class="berita-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <nav aria-label="Pagination Berita" data-aos="fade-up" data-aos-delay="800">
+              <ul class="berita-pagination pagination justify-content-center">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                    <i class="fas fa-chevron-left"></i>
+                  </a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Kegiatan Tab -->
+          <div class="tab-pane fade" id="kegiatan" role="tabpanel" aria-labelledby="kegiatan-tab">
+            <div class="row">
+              <!-- Kegiatan 1 -->
+              <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="berita-news-card">
+                  <div
+                    class="berita-news-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"
+                  ></div>
+                  <div class="berita-news-date ms-3">25 Maret 2024</div>
+                  <div class="berita-news-content">
+                    <span class="berita-news-category">Kegiatan</span>
+                    <h3 class="berita-news-title">Workshop Peningkatan Pelayanan Transportasi Publik</h3>
+                    <p class="berita-news-excerpt">Workshop untuk meningkatkan kualitas pelayanan transportasi publik dengan melibatkan operator dan masyarakat.</p>
+                    <a href="#" class="berita-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Kegiatan 2 -->
+              <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="berita-news-card">
+                  <div
+                    class="berita-news-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"
+                  ></div>
+                  <div class="berita-news-date ms-3">20 Maret 2024</div>
+                  <div class="berita-news-content">
+                    <span class="berita-news-category">Kegiatan</span>
+                    <h3 class="berita-news-title">Pelatihan Keselamatan Lalu Lintas bagi Sopir Angkutan Umum</h3>
+                    <p class="berita-news-excerpt">Pelatihan keselamatan lalu lintas bagi sopir angkutan umum untuk mengurangi angka kecelakaan di jalan raya.</p>
+                    <a href="#" class="berita-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Kegiatan 3 -->
+              <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="berita-news-card">
+                  <div
+                    class="berita-news-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"
+                  ></div>
+                  <div class="berita-news-date ms-3">15 Maret 2024</div>
+                  <div class="berita-news-content">
+                    <span class="berita-news-category">Kegiatan</span>
+                    <h3 class="berita-news-title">Pemeliharaan Rambu Lalu Lintas di Seluruh Kota</h3>
+                    <p class="berita-news-excerpt">Kegiatan pemeliharaan dan perbaikan rambu lalu lintas untuk memastikan keamanan dan kenyamanan pengguna jalan.</p>
+                    <a href="#" class="berita-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Kegiatan 4 -->
+              <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="500">
+                <div class="berita-news-card">
+                  <div
+                    class="berita-news-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"
+                  ></div>
+                  <div class="berita-news-date ms-3">10 Maret 2024</div>
+                  <div class="berita-news-content">
+                    <span class="berita-news-category">Kegiatan</span>
+                    <h3 class="berita-news-title">Monitoring Kualitas Udara di Titik Kemacetan</h3>
+                    <p class="berita-news-excerpt">Kegiatan monitoring kualitas udara di titik-titik kemacetan untuk menilai dampak transportasi terhadap lingkungan.</p>
+                    <a href="#" class="berita-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Kegiatan 5 -->
+              <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="600">
+                <div class="berita-news-card">
+                  <div
+                    class="berita-news-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"
+                  ></div>
+                  <div class="berita-news-date ms-3">5 Maret 2024</div>
+                  <div class="berita-news-content">
+                    <span class="berita-news-category">Kegiatan</span>
+                    <h3 class="berita-news-title">Rapat Koordinasi Penanganan Kemacetan di Jam Sibuk</h3>
+                    <p class="berita-news-excerpt">Rapat koordinasi untuk membahas strategi penanganan kemacetan di jam sibuk dengan melibatkan berbagai pihak terkait.</p>
+                    <a href="#" class="berita-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Kegiatan 6 -->
+              <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="700">
+                <div class="berita-news-card">
+                  <div
+                    class="berita-news-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"
+                  ></div>
+                  <div class="berita-news-date ms-3">1 Maret 2024</div>
+                  <div class="berita-news-content">
+                    <span class="berita-news-category">Kegiatan</span>
+                    <h3 class="berita-news-title">Penandatanganan MoU dengan Perguruan Tinggi</h3>
+                    <p class="berita-news-excerpt">Penandatanganan MoU dengan perguruan tinggi untuk pengembangan sistem transportasi cerdas di Kota Cirebon.</p>
+                    <a href="#" class="berita-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <nav aria-label="Pagination Berita" data-aos="fade-up" data-aos-delay="800">
+              <ul class="berita-pagination pagination justify-content-center">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                    <i class="fas fa-chevron-left"></i>
+                  </a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer id="kontak">
-        <div class="container footer-content">
+      <div class="container footer-content">
+        <div class="row">
+          <!-- Logo & Deskripsi -->
+          <div class="col-lg-4 mb-4" data-aos="fade-up">
+            <div class="footer-logo">
+              <div class="d-flex align-items-center mb-3">
+                <img src="assets/img/logo/logo-pemkot.png" alt="Logo Pemerintah" style="max-height: 70px; margin-right: 15px" />
+                <img src="assets/img/logo/dishubpng.png" alt="Logo Dishub" style="max-height: 70px; margin-right: 15px" />
+                <div>
+                  <h5 class="mb-1">SILALIN</h5>
+                  <p class="mb-0 text-light small">Sistem Lalu Lintas Dishub Kota Cirebon</p>
+                </div>
+              </div>
+              <p>Portal resmi Bidang Lalu Lintas, Dinas Perhubungan Kota Cirebon. Menyediakan informasi, layanan, dan pengaduan masyarakat di bidang lalu lintas secara cepat, mudah, dan transparan.</p>
+            </div>
+          </div>
+
+          <!-- Alamat & Kontak -->
+          <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <h5 class="mb-3">Alamat</h5>
+            <p class="mb-3"><i class="bi bi-geo-alt me-2"></i>Jl. Terusan Pemuda No.8, Sunyaragi, Kesambi, Kota Cirebon, Jawa Barat 45132, Indonesia</p>
+
+            <h6 class="mb-2">Kontak</h6>
+            <p class="mb-2"><i class="bi bi-telephone me-2"></i>(0231) 489717</p>
+            <p class="mb-3"><i class="bi bi-envelope me-2"></i>dishub@cirebonkota.go.id</p>
+
+            <h6 class="mb-2">Ikuti Kami</h6>
+            <div class="social-icons">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+              <a href="#"><i class="bi bi-twitter"></i></a>
+            </div>
+          </div>
+
+          <!-- Tautan Cepat -->
+          <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
             <div class="row">
-                <!-- Logo & Deskripsi -->
-                <div class="col-lg-4 mb-4" data-aos="fade-up">
-                    <div class="footer-logo">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="assets/img/logo/logo-pemkot.png" alt="Logo Pemerintah"
-                                style="max-height:70px; margin-right:15px;">
-                            <img src="assets/img/logo/dishubpng.png" alt="Logo Dishub"
-                                style="max-height:70px; margin-right:15px;">
-                            <div>
-                                <h5 class="mb-1">SILALIN</h5>
-                                <p class="mb-0 text-light small">Sistem Lalu Lintas Dishub Kota Cirebon</p>
-                            </div>
-                        </div>
-                        <p>Portal resmi Bidang Lalu Lintas, Dinas Perhubungan Kota Cirebon.
-                            Menyediakan informasi, layanan, dan pengaduan masyarakat di bidang lalu lintas secara cepat,
-                            mudah, dan transparan.</p>
-                    </div>
+              <div class="col-6">
+                <h6 class="mb-3">Tautan Layanan</h6>
+                <div class="footer-links">
+                  <a href="#">Rekomendasi Andalalin</a>
+                  <a href="#">Rekomendasi Parkir</a>
+                  <a href="#">Pengaduan Masyarakat</a>
+                  <a href="#">FAQ</a>
                 </div>
-    
-                <!-- Alamat & Kontak -->
-                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <h5 class="mb-3">Alamat</h5>
-                    <p class="mb-3"><i class="bi bi-geo-alt me-2"></i>Jl. Terusan Pemuda No.8, Sunyaragi, Kesambi, Kota
-                        Cirebon, Jawa Barat 45132, Indonesia</p>
-    
-                    <h6 class="mb-2">Kontak</h6>
-                    <p class="mb-2"><i class="bi bi-telephone me-2"></i>(0231) 489717</p>
-                    <p class="mb-3"><i class="bi bi-envelope me-2"></i>dishub@cirebonkota.go.id</p>
-    
-                    <h6 class="mb-2">Ikuti Kami</h6>
-                    <div class="social-icons">
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-youtube"></i></a>
-                        <a href="#"><i class="bi bi-twitter"></i></a>
-                    </div>
+              </div>
+              <div class="col-6">
+                <h6 class="mb-3">Informasi Publik</h6>
+                <div class="footer-links">
+                  <a href="#">Regulasi</a>
+                  <a href="#">Transparansi</a>
+                  <a href="#">Open Data</a>
+                  <a href="#">e-PPID</a>
                 </div>
-    
-                <!-- Tautan Cepat -->
-                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="row">
-                        <div class="col-6">
-                            <h6 class="mb-3">Tautan Layanan</h6>
-                            <div class="footer-links">
-                                <a href="#">Rekomendasi Andalalin</a>
-                                <a href="#">Rekomendasi Parkir</a>
-                                <a href="#">Pengaduan Masyarakat</a>
-                                <a href="#">FAQ</a>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <h6 class="mb-3">Informasi Publik</h6>
-                            <div class="footer-links">
-                                <a href="#">Regulasi</a>
-                                <a href="#">Transparansi</a>
-                                <a href="#">Open Data</a>
-                                <a href="#">e-PPID</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-    
-            <!-- Copyright -->
-            <div class="copyright">
-                <p>&copy; 2025 SILALIN – Dinas Perhubungan Kota Cirebon. Seluruh Hak Cipta Dilindungi.</p>
-                <p class="mt-1 small">Desain dan dikembangkan oleh Valen dan Irfan mahasiswa SI UCIC</p>
-            </div>
+          </div>
         </div>
+
+        <!-- Copyright -->
+        <div class="copyright">
+          <p>&copy; 2025 SILALIN – Dinas Perhubungan Kota Cirebon. Seluruh Hak Cipta Dilindungi.</p>
+          <p class="mt-1 small">Desain dan dikembangkan oleh Valen dan Irfan mahasiswa SI UCIC</p>
+        </div>
+      </div>
     </footer>
 
     <!-- Bootstrap 5 JS Bundle with Popper -->
@@ -477,6 +460,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
     <!-- Scripts -->
     <script src="assets/js/script.js"></script>
-</body>
-
+  </body>
 </html>
